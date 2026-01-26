@@ -1,0 +1,65 @@
+body {
+    background: linear-gradient(rgba(4,5,12,0.40)),
+    url("./imgs/mty.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#topNav {
+
+    background: linear-gradient(rgba(4,5,12,0.70));
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+#topNav h1 {
+    color: #09e2178e;
+}
+
+#topNav ul {
+    list-style-type: none;
+}
+  
+#topNav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+  
+#topNav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#topNav a:hover {
+    color: #09e2178e;
+}
+
+button {
+    padding: 7px 15px;
+    background-color: #09e2178e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10%;
+}
+
+button:hover {
+    background-color: white;
+    color: #09e2178e;
+}
+
+input[type="text"],
+  input[type="number"],
+  select {
+    width: 200px;
+    padding: 5px;
+  }
