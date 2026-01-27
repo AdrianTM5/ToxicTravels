@@ -1,3 +1,4 @@
+ /*-----------------------Index----------------------- */
 body {
     background: linear-gradient(rgba(4,5,12,0.40)),
     url("./imgs/mty.jpg") no-repeat center center fixed;
@@ -63,3 +64,136 @@ input[type="text"],
     width: 200px;
     padding: 5px;
   }
+
+
+ main {
+    padding: 20px;
+    justify-content: space-between;
+ }
+
+ main h1 {
+    color: #079c11;
+    text-shadow: 
+    -1px -1px 0 black,
+    -1px 1px 0 black;
+    font-weight: bold;
+    margin-left: 100px;
+    margin-top: 50px;
+    font-size: 70px;
+ }
+
+ main p {
+    color: #ffffff;
+    margin-top: 50px;
+    margin-left: 110px;
+    font-size: 20px;
+ }
+
+ #sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+#sidebar svg {
+    width: 40px;
+    height: 40px;
+    margin-top: 15px;
+    margin-left: 15px;
+    color: #09e2178e;
+}
+ /*----------------------About Us------------------------ */
+ #topNav2 {
+    background: linear-gradient(rgba(4,5,12,0.70));
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+#topNav2 h1 {
+    color: #09e2178e;
+}
+
+#topNav2 ul {
+    list-style-type: none;
+    margin-right: 373px;
+}
+  
+#topNav2 ul li {
+    display: inline;
+    margin-right: 10px;
+}
+  
+#topNav2 a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#topNav2 a:hover {
+    color: #09e2178e;
+}
+
+#aboutMain div {
+    background-color: #0000005d;
+    align-items: center;
+    width: 1000px;
+    margin-left: 450px;
+    margin-top: 20px;
+}
+
+#aboutMain h1 {
+    margin-left: 300px;
+}
+
+#sidebar2 {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    margin-top:-989px;
+    
+}
+
+#sidebar2 svg {
+    width: 40px;
+    height: 40px;
+    margin-top: 15px;
+    margin-left: 15px;
+    color: #09e2178e;
+}
+
+/*----------------------Contact Us------------------------ */
+#ourDiv div{
+    background-color: #0000005d;
+    align-items: center;
+    width: 300px;
+    margin-left: 450px;
+    margin-top: 20px;
+}
+
+#sidebar3 {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    margin-top: -192px;
+    
+}
+
+#sidebar3 svg {
+    width: 40px;
+    height: 40px;
+    margin-top: 15px;
+    margin-left: 15px;
+    color: #09e2178e;
+}
