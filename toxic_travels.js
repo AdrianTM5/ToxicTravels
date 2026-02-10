@@ -31,6 +31,18 @@ function searchPlace() {
             case 'são paulo': {
                 findCity(data, 'Brazil', 'São Paulo'); break;
             }
+            case 'beaches': {
+                findKeyword(data, 'beaches'); break;
+            }
+            case 'beach': {
+                findKeyword(data, 'beaches'); break;
+            }
+            case 'temples': {
+                findKeyword(data, 'temples'); break;
+            }
+            case 'temple': {
+                findKeyword(data, 'temples'); break;
+            }
             default: {
                 var search = data.countries.find(item => item.name.toLowerCase() === input);
                 search.cities.forEach(city => {
@@ -53,6 +65,15 @@ function findCity(data, countryName, cityName) {
     console.log(search.name);
     console.log(search.imageUrl);
     console.log(search.description);
+}
+
+function findKeyword(data, keyword) {
+    var search = (keyword === 'temples') ? data.temples: data.beaches;
+    search.forEach(key => {
+    console.log(key.name);
+    console.log(key.imageUrl);
+    console.log(key.description);
+    });
 }
 
 function clearAll() {
