@@ -52,7 +52,13 @@ function searchPlace() {
     })
     .catch(error => {
         console.error('Error:', error);
-        resultDiv.innerHTML = 'An error occurred while fetching data.';
+        resultDiv.innerHTML += 
+        `<div class="animar" id="innerResultDiv">
+            <img id="resultImg" src="imgs/404.jpeg">
+            <h3 id="resultTitle">Destination not found</h4>
+            <br>
+            <p id="resultDescription">Try with another place or keyword</p>
+        </div>`;
     });
 }
 
@@ -77,39 +83,48 @@ function find(data, word, cityName, single, input) {
 }
 
 function createResultCard(result, single, cities) {
+    resultDiv.style.display = 'block';
     if(single){
-        resultDiv.innerHTML += `<img id="resultImg" src="${result.imageUrl}">`;
         resultDiv.innerHTML += 
-        `<div id="innerResultDiv">
-            <h4 id="resultTitle">${result.name}</h4>
-            <br>
-            <p id="resultDescription">${result.description}</p>
-        </div>`;
+        `<a id="aCard" class="animar" href="#">
+            <div id="innerResultDiv">
+                <img id="resultImg" src="${result.imageUrl}">
+                <h3 id="resultTitle">${result.name}</h4>
+                <br>
+                <p id="resultDescription">${result.description}</p>
+            </div>
+        </a>`;
     } else if(cities) {
         result.cities.forEach(r => {
-            resultDiv.innerHTML += `<img id="resultImg" src="${r.imageUrl}">`;
             resultDiv.innerHTML += 
-            `<div id="innerResultDiv">
-                <h4 id="resultTitle">${r.name}</h4>
-                <br>
-                <p id="resultDescription">${r.description}</p>
-            </div>`;
+            `<a id="aCard" class="animar" href="#">
+                <div id="innerResultDiv">
+                    <img id="resultImg" src="${r.imageUrl}"></img>
+                    <h3 id="resultTitle">${r.name}</h4>
+                    <br>
+                    <p id="resultDescription">${r.description}</p>
+                </div>
+            </a>`;
         });
     } else {
         result.forEach(r => {
-            resultDiv.innerHTML += `<img id="resultImg" src="${r.imageUrl}">`;
             resultDiv.innerHTML += 
-            `<div id="innerResultDiv">
-                <h4 id="resultTitle">${r.name}</h4>
-                <br>
-                <p id="resultDescription">${r.description}</p>
-            </div>`;
+            `<a id="aCard" class="animar" href="#">
+                <div id="innerResultDiv">
+                    <img id="resultImg" src="${r.imageUrl}"></img>
+                    <h3 id="resultTitle">${r.name}</h4>
+                    <br>
+                    <p id="resultDescription">${r.description}</p>
+                </div>
+            </a>`;
         });
     }
 }
 
 function clearAll() {
+    document.getElementById('searchBar').value = '';
     resultDiv.innerHTML = ``;
+    resultDiv.style.display = 'none';
 }
 
 searchBtn.addEventListener("click",searchPlace);

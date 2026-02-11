@@ -54,7 +54,7 @@ button {
 }
 
 button:hover {
-    background-color: white;
+    background-color: rgb(98, 98, 98);
     color: #09e2178e;
 }
 
@@ -105,6 +105,60 @@ input[type="text"],
     margin-left: 15px;
     color: #09e2178e;
 }
+
+#result {
+    width: 320px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 100px;
+    margin-right: 50px;
+}
+
+
+#innerResultDiv {
+    margin-bottom: 100px;
+    margin-top: -4.5px;
+    padding: 5px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(rgba(255, 255, 255, 0.8));
+}
+
+#innerResultDiv:hover {
+    background: linear-gradient(rgba(222, 222, 222, 0.8));
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.animar {
+    animation: fade 0.95s ease-in-out;
+}
+
+#resultImg {
+    width: 320px;
+    height: 150px;
+    margin: -5px;
+}
+
+#resultTitle {
+    color: #079c11;
+}
+
+#aCard {
+    text-decoration: none;
+}
+
+#resultDescription {
+    color: black;
+}
+
  /*----------------------About Us------------------------ */
  #topNav2 {
     background: linear-gradient(rgba(4,5,12,0.70));
@@ -197,3 +251,4 @@ input[type="text"],
     margin-left: 15px;
     color: #09e2178e;
 }
+
