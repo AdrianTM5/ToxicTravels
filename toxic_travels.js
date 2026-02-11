@@ -5,54 +5,49 @@ function searchPlace() {
     const input = document.getElementById('searchBar').value.toLowerCase();
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = '';
-
+    var result, single = true, cities = false;
     fetch('api.json')
     .then(response => response.json())
     .then(data => {
         switch(input) {
             case 'sydney': {
-                findCity(data, 'Australia', 'Sydney'); break;
+                result =  find(data, 'Australia', 'Sydney', single); break;
             }
             case 'melbourne': {
-                findCity(data, 'Australia', 'Melbourne'); break;
+                result =  find(data, 'Australia', 'Melbourne', single); break;
             }
             case 'tokyo': {
-                findCity(data, 'Japan', 'Tokyo'); break;
+                result =  find(data, 'Japan', 'Tokyo', single); break;
             }
             case 'kyoto': {
-                findCity(data, 'Japan', 'Kyoto'); break;
+                result =  find(data, 'Japan', 'Kyoto', single); break;
             }
             case 'rio de janeiro': {
-                findCity(data, 'Brazil', 'Rio de Janeiro'); break;
+                result =  find(data, 'Brazil', 'Rio de Janeiro', single); break;
             }
             case 'sao paulo': {
-                findCity(data, 'Brazil', 'São Paulo'); break;
+                result =  find(data, 'Brazil', 'São Paulo', single); break;
             }
             case 'são paulo': {
-                findCity(data, 'Brazil', 'São Paulo'); break;
+                result =  find(data, 'Brazil', 'São Paulo', single); break;
             }
             case 'beaches': {
-                findKeyword(data, 'beaches'); break;
+                single = false; result =  find(data, 'beaches', '' ,single); break;
             }
             case 'beach': {
-                findKeyword(data, 'beaches'); break;
+                single = false; result =  find(data, 'beaches', '' ,single); break;
             }
             case 'temples': {
-                findKeyword(data, 'temples'); break;
+                single = false; result =  find(data, 'temples', '' ,single); break;
             }
             case 'temple': {
-                findKeyword(data, 'temples'); break;
+                single = false; result =  find(data, 'temples', '' ,single); break;
             }
             default: {
-                var search = data.countries.find(item => item.name.toLowerCase() === input);
-                search.cities.forEach(city => {
-                console.log(city.name);
-                console.log(city.imageUrl);
-                console.log(city.description);
-                });
-                break;
+                cities = true; single = false; result = find(data, '', '', single, input); break;
             }
         }
+        createResultCard(result, single, cities);
     })
     .catch(error => {
         console.error('Error:', error);
@@ -60,20 +55,44 @@ function searchPlace() {
     });
 }
 
-function findCity(data, countryName, cityName) {
-    var search = data.countries.find(c => c.name === countryName).cities.find(city => city.name.includes(cityName));
-    console.log(search.name);
-    console.log(search.imageUrl);
-    console.log(search.description);
+function find(data, word, cityName, single, input) {
+    if(single) {
+        var search = data.countries.find(c => c.name === word).cities.find(city => city.name.includes(cityName));
+        return search;
+    }
+    else {
+        if(word === 'temples'){
+            search = data.temples
+            return search;
+        }
+        else if (word === 'beaches') {
+            search = data.beaches;
+            return search;
+        }else {
+            search = data.countries.find(item => item.name.toLowerCase() === input);
+            return search;
+        }
+    }
 }
 
-function findKeyword(data, keyword) {
-    var search = (keyword === 'temples') ? data.temples: data.beaches;
-    search.forEach(key => {
-    console.log(key.name);
-    console.log(key.imageUrl);
-    console.log(key.description);
-    });
+function createResultCard(result, single, cities) {
+    if(single){
+        console.log(result.name);
+        console.log(result.imageUrl);
+        console.log(result.description);
+    } else if(cities) {
+        result.cities.forEach(r => {
+        console.log(r.name);
+        console.log(r.imageUrl);
+        console.log(r.description);
+        });
+    } else {
+        result.forEach(r => {
+            console.log(r.name);
+            console.log(r.imageUrl);
+            console.log(r.description);
+            });
+    }
 }
 
 function clearAll() {
