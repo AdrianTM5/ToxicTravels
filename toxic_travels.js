@@ -1,5 +1,6 @@
 const searchBtn = document.getElementById('searchBtn');
 const clearBtn = document.getElementById('clearBtn');
+const resultDiv = document.getElementById('result');
 
 function searchPlace() {
     const input = document.getElementById('searchBar').value.toLowerCase();
@@ -77,27 +78,38 @@ function find(data, word, cityName, single, input) {
 
 function createResultCard(result, single, cities) {
     if(single){
-        console.log(result.name);
-        console.log(result.imageUrl);
-        console.log(result.description);
+        resultDiv.innerHTML += `<img id="resultImg" src="${result.imageUrl}">`;
+        resultDiv.innerHTML += 
+        `<div id="innerResultDiv">
+            <h4 id="resultTitle">${result.name}</h4>
+            <br>
+            <p id="resultDescription">${result.description}</p>
+        </div>`;
     } else if(cities) {
         result.cities.forEach(r => {
-        console.log(r.name);
-        console.log(r.imageUrl);
-        console.log(r.description);
+            resultDiv.innerHTML += `<img id="resultImg" src="${r.imageUrl}">`;
+            resultDiv.innerHTML += 
+            `<div id="innerResultDiv">
+                <h4 id="resultTitle">${r.name}</h4>
+                <br>
+                <p id="resultDescription">${r.description}</p>
+            </div>`;
         });
     } else {
         result.forEach(r => {
-            console.log(r.name);
-            console.log(r.imageUrl);
-            console.log(r.description);
-            });
+            resultDiv.innerHTML += `<img id="resultImg" src="${r.imageUrl}">`;
+            resultDiv.innerHTML += 
+            `<div id="innerResultDiv">
+                <h4 id="resultTitle">${r.name}</h4>
+                <br>
+                <p id="resultDescription">${r.description}</p>
+            </div>`;
+        });
     }
 }
 
 function clearAll() {
-    document.getElementById('searchBar').value = '';
-    console.clear();
+    resultDiv.innerHTML = ``;
 }
 
 searchBtn.addEventListener("click",searchPlace);
