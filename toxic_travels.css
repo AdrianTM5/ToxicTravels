@@ -175,7 +175,7 @@ input[type="text"],
 
 #topNav2 ul {
     list-style-type: none;
-    margin-right: 373px;
+    margin-right: 363.5px;
 }
   
 #topNav2 ul li {
@@ -193,13 +193,46 @@ input[type="text"],
     color: #09e2178e;
 }
 
-#aboutMain div {
+#aboutDiv {
     background-color: #0000005d;
     align-items: center;
     width: 1000px;
     margin-left: 450px;
     margin-top: 20px;
 }
+
+#aboutMain p {
+    font-size: 30px;
+    padding: 20px;
+}
+
+#aboutMain h3 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: -50px;
+}
+
+#aboutMain ul li b {
+    font-size: 30px;
+    padding: 20px;
+}
+
+#aboutMain ul li p {
+    font-size: 25px;
+    padding: 20px;
+}
+
+#outterOurDiv {
+    display: grid;
+    margin-left: 250px;
+}
+
+#ourDiv button {
+    margin-left: 200px;
+}
+
+
 
 #aboutMain h1 {
     margin-left: 300px;
@@ -212,7 +245,7 @@ input[type="text"],
     position: fixed;
     height: 100%;
     overflow: auto;
-    margin-top:-989px;
+    margin-top: -1914px;
     
 }
 
@@ -222,6 +255,18 @@ input[type="text"],
     margin-top: 15px;
     margin-left: 15px;
     color: #09e2178e;
+}
+
+#ourDiv {
+    background-color: #0000005d;
+    align-items: center;
+    width: 500px;
+    margin-left: 450px;
+    margin-top: 20px;
+}
+
+#ourButton {
+    align-self: center;
 }
 
 /*----------------------Contact Us------------------------ */
