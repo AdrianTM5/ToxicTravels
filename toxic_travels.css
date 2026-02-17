@@ -176,6 +176,7 @@ input[type="text"],
 #topNav2 ul {
     list-style-type: none;
     margin-right: 363.5px;
+    margin-bottom: 1px;
 }
   
 #topNav2 ul li {
@@ -201,9 +202,15 @@ input[type="text"],
     margin-top: 20px;
 }
 
+#aboutDiv ul {
+    list-style: none;
+}
+
 #aboutMain p {
     font-size: 30px;
     padding: 20px;
+    text-align: justify;
+    margin-left: -5px;
 }
 
 #aboutMain h3 {
@@ -228,11 +235,13 @@ input[type="text"],
     margin-left: 250px;
 }
 
+#outterOurDiv p {
+    text-align: center;
+}
+
 #ourDiv button {
     margin-left: 200px;
 }
-
-
 
 #aboutMain h1 {
     margin-left: 300px;
@@ -270,6 +279,15 @@ input[type="text"],
 }
 
 /*----------------------Contact Us------------------------ */
+
+#contactMain div {
+    background-color: #0000005d;
+    align-items: center;
+    width: 800px;
+    margin-left: 600px;
+    margin-top: 20px;
+}
+
 #ourDiv div{
     background-color: #0000005d;
     align-items: center;
@@ -285,7 +303,7 @@ input[type="text"],
     position: fixed;
     height: 100%;
     overflow: auto;
-    margin-top: -192px;
+    margin-top: -427px;
     
 }
 
@@ -297,3 +315,53 @@ input[type="text"],
     color: #09e2178e;
 }
 
+#contactMain textarea {
+    background-color: #ffffff5d;
+    width: 700px;
+    margin-left: 50px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+#contactMain h3 {
+    padding: 20px;
+}
+
+#contactMain button {
+    margin: 10px;
+    margin-left: 375px;
+}
+
+#topNav3 {
+    background: linear-gradient(rgba(4,5,12,0.70));
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+#topNav3 h1 {
+    color: #09e2178e;
+}
+
+#topNav3 ul {
+    list-style-type: none;
+    margin-right: 379.5px;
+    margin-bottom: 1px;
+}
+  
+#topNav3 ul li {
+    display: inline;
+    margin-right: 10px;
+}
+  
+#topNav3 a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#topNav3 a:hover {
+    color: #09e2178e;
+}
