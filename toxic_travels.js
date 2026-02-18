@@ -1,6 +1,9 @@
 const searchBtn = document.getElementById('searchBtn');
 const clearBtn = document.getElementById('clearBtn');
 const resultDiv = document.getElementById('result');
+var options;
+var time;
+
 
 function searchPlace() {
     const input = document.getElementById('searchBar').value.toLowerCase();
@@ -85,6 +88,9 @@ function find(data, word, cityName, single, input) {
 function createResultCard(result, single, cities) {
     resultDiv.style.display = 'block';
     if(single){
+        console.log(result.time)
+        options = { timeZone: result.time, hour12: true, hour: 'numeric', minute: 'numeric', second: 'numeric' };
+        time = new Date().toLocaleTimeString('en-US', options);
         resultDiv.innerHTML += 
         `<a id="aCard" class="animar" href="#">
             <div id="innerResultDiv">
@@ -92,10 +98,13 @@ function createResultCard(result, single, cities) {
                 <h3 id="resultTitle">${result.name}</h4>
                 <br>
                 <p id="resultDescription">${result.description}</p>
+                <p id="resultTime">Current time: ${time}
             </div>
         </a>`;
     } else if(cities) {
         result.cities.forEach(r => {
+            options = { timeZone: r.time, hour12: true, hour: 'numeric', minute: 'numeric', second: 'numeric' };
+            time = new Date().toLocaleTimeString('en-US', options);
             resultDiv.innerHTML += 
             `<a id="aCard" class="animar" href="#">
                 <div id="innerResultDiv">
@@ -103,11 +112,14 @@ function createResultCard(result, single, cities) {
                     <h3 id="resultTitle">${r.name}</h4>
                     <br>
                     <p id="resultDescription">${r.description}</p>
+                    <p id="resultTime">Current time: ${time}</p>
                 </div>
             </a>`;
         });
     } else {
         result.forEach(r => {
+            options = { timeZone: r.time, hour12: true, hour: 'numeric', minute: 'numeric', second: 'numeric' };
+        time = new Date().toLocaleTimeString('en-US', options);
             resultDiv.innerHTML += 
             `<a id="aCard" class="animar" href="#">
                 <div id="innerResultDiv">
@@ -115,6 +127,7 @@ function createResultCard(result, single, cities) {
                     <h3 id="resultTitle">${r.name}</h4>
                     <br>
                     <p id="resultDescription">${r.description}</p>
+                    <p id="resultTime">Current time: ${time}
                 </div>
             </a>`;
         });
@@ -126,6 +139,8 @@ function clearAll() {
     resultDiv.innerHTML = ``;
     resultDiv.style.display = 'none';
 }
+
+
 
 searchBtn.addEventListener("click",searchPlace);
 clearBtn.addEventListener("click", clearAll);
